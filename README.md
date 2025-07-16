@@ -2,9 +2,9 @@
 
 This repository contains experiments for classifying images of actresses using convolutional neural networks (CNNs) with PyTorch. The goal is to discriminate between three classes:
 
-- 🎭 **Natalie Portman**
-- 🎭 **Keira Knightley**
-- 🧍 **Others**
+| ![](screenshot/Kiera.png) | ![](screenshot/Natallie.png) | ![](screenshot/Margot.png) |
+| :-----------------------: | :--------------------------: | :------------------------: |
+|  🎭 **Natalie Portman**   |    🎭 **Keira Knightley**    |       🧍 **Others**        |
 
 The two first classes were chosen because the actresses are commonly mistaken for each other. A small dataset of cropped portrait images is provided to train and evaluate the models.
 
@@ -33,7 +33,6 @@ The project explores two main strategies:
 
 🔧 The best result with a custom architecture was achieved with the configuration:
 
-
 ```
 config0 = [64, "M", 256, "M", 512, "M"]
 ```
@@ -47,7 +46,7 @@ Using transfer learning with **ResNet18** improved the validation accuracy to **
 
 ## 📦 Repository Contents
 
-- 📓 `classProject.ipynb` – main notebook used to run the experiments.
+- 📓 `Classifier.ipynb` – main notebook used to run the experiments.
 - 🧪 `Trash - Tests/` – additional exploratory notebooks.
 - 💾 `checkpoint/ckpt.t7` – example of a saved model checkpoint.
 
@@ -55,4 +54,4 @@ Using transfer learning with **ResNet18** improved the validation accuracy to **
 
 ## 🛠️ Getting Started
 
-Open `classProject.ipynb` with Jupyter or Google Colab to reproduce the experiments. The notebook expects the image folders to be available under `data/train` and `data/val` as shown above.
+Open `Classifier.ipynb` with Jupyter or Google Colab to reproduce the experiments. The notebook expects the image folders to be available under `data/train` and `data/val` as shown above.
