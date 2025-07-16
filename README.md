@@ -1,17 +1,58 @@
-# Actress_DL_Classification
-Dans ce projet, nous devons réaliser une classification d'images concernant de 3 groupes d'actrices dont deux d'entre eux sont connues pour être des sosies (Natalie Portman et Kiera Nightley). Pour y arriver, nous avons utilisé les CNNs et procédé à certaines opérations en utilisant la framework Pytorch. 
+# 🧠 Doppelganger Face Classification Model Experiment
 
-Pour effectuer ce travail, nous disposons d'un dossier d'images conprenant deux sous dossiers:
-- `train` qui comprend 429 images 
-- `val` qui comprend 168 images
-Chacun de ces sous dossiers comprennent eux-mêmes trois sous dossiers dans lesquels sont classés les images en trois classes (`Natalie`, `Kiera`, `Autres`) de format 530x400 pixels.
+This repository contains experiments for classifying images of actresses using convolutional neural networks (CNNs) with PyTorch. The goal is to discriminate between three classes:
 
-Ce travail comprend deux grandes parties :
-1. La construction d'un réseau avec une configuration experimentale.
-2. L'utlisation du le Transfer Learning pour améliorer la classification.
+- 🎭 **Natalie Portman**
+- 🎭 **Keira Knightley**
+- 🧍 **Others**
 
-Pour la première partie, nous avons developpé des modèles simples et aussi des modèles assez compliqués qui demandent beaucoup de ressources pour s'entrainer. Nous avons aussi transformé et standardisé les images pour les deux procédures.
+The two first classes were chosen because the actresses are commonly mistaken for each other. A small dataset of cropped portrait images is provided to train and evaluate the models.
 
-Parmi nos modèles définis, celui qui a été le plus performant a été spécifié comme suit :  `config0 = [64,"M", 256, "M", 512, "M"]`. Ce modèle nous a permis d'avoir une accuracy de `55.7%` sur l'ensemble d'entrainement et de `40.5%` sur l'ensemble de validation. Ce qui parait assez pauvre comme résultat mais ce sont les meilleurs résultats qu'on a pu trouver avec toutes ces configurations dont nous avons definies.
+---
 
-En ce qui a trait au tranfer learning, on a pu essayer beaucoup de modèles comme `efficientNet(b0 à b7), ResNet18, ResNet152 et Inception3`. Le résultats dont nous avons trouvé indiquent que le modèle ResNet18 a été le plus adapté pour résoudre ce problème avec `60.7%` d'accuracy sur les données de validation.
+## 📁 Dataset
+
+The `data` directory is organized as follows:
+
+```
+data/
+├── train/  (429 images)
+└── val/    (168 images)
+```
+
+Both `train` and `val` contain the three sub‑folders `Natalie`, `Kiera` and `Autres` with images of size 530×400 pixels.
+
+---
+
+## 🚀 Approach
+
+The project explores two main strategies:
+
+1. 🧪 **Training custom CNN models.** Several network configurations were tested by varying the number of convolutional layers and pooling operations. Images are normalized and augmented before training.
+2. 🧠 **Transfer learning.** Pre‑trained architectures such as EfficientNet (b0–b7), ResNet18, ResNet152 and Inception v3 are fine‑tuned on the dataset.
+
+🔧 The best result with a custom architecture was achieved with the configuration:
+
+
+```
+config0 = [64, "M", 256, "M", 512, "M"]
+```
+
+- ✅ Training accuracy: **55.7%**
+- 📉 Validation accuracy: **40.5%**
+
+Using transfer learning with **ResNet18** improved the validation accuracy to **60.7%**. 📈
+
+---
+
+## 📦 Repository Contents
+
+- 📓 `classProject.ipynb` – main notebook used to run the experiments.
+- 🧪 `Trash - Tests/` – additional exploratory notebooks.
+- 💾 `checkpoint/ckpt.t7` – example of a saved model checkpoint.
+
+---
+
+## 🛠️ Getting Started
+
+Open `classProject.ipynb` with Jupyter or Google Colab to reproduce the experiments. The notebook expects the image folders to be available under `data/train` and `data/val` as shown above.
