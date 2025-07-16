@@ -4,7 +4,7 @@ This repository contains experiments for classifying images of actresses using c
 
 | ![](screenshot/Kiera.png) | ![](screenshot/Natallie.png) | ![](screenshot/Margot.png) |
 | :-----------------------: | :--------------------------: | :------------------------: |
-|  🎭 **Natalie Portman**   |    🎭 **Keira Knightley**    |       🧍 **Others**        |
+|  🎭 **Keira Knightley**   |    🎭 **Natalie Portman**     |       🧍 **Others**        |
 
 The two first classes were chosen because the actresses are commonly mistaken for each other. A small dataset of cropped portrait images is provided to train and evaluate the models.
 
